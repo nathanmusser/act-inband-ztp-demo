@@ -1,0 +1,7 @@
+- name: Setup local automation server
+  hosts: localhost
+  gather_facts: false
+  become: yes
+  tasks:
+    - name: Add IP for communication with CVP
+      ansible.builtin.shell: "sudo ip addr add 192.168.255.254/24 dev et1"
